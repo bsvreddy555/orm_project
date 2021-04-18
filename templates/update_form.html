@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="offset-md-2 col-md-8">
+            <form method="post" action="#">
+                {% csrf_token %}
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp" value="{{ stu_data.name }}">
+              </div>
+              <div class="form-group">
+                <label for='age'>Age</label>
+                <input type="number" name="age" class="form-control" id="age" value="{{ stu_data.age }}">
+              </div>
+               <div class="form-group">
+                <label for="qualification">Qualification</label>
+                <input type="text" name="qualification" class="form-control" id="qualification" aria-describedby="emailHelp" value="{{ stu_data.qualification }}">
+              </div>
+              <div class="form-group">
+                <label for="email id">Email Id</label>
+                <input type="text" name="email_id" class="form-control" id="email id" value="{{ stu_data.mail_id }}">
+              </div>
+              <div class="form-group">
+                <label for="duration">Duration</label>
+                <input type="number" name="duration" class="form-control" id="duration" aria-describedby="emailHelp" value="{{ stu_data.duration }}">
+              </div>
+              <div class="form-group">
+                <label for="Joining Date">Joining Date</label>
+                <input type="date" name="joining_date" class="form-control" id="Joining Date" value="{{ stu_data.joining_date|date:'Y-m-d' }}">
+              </div>
+              <div class="form-group">
+                <label for="paid amount">Paid Amount</label>
+                <input type="number" name="paid_amount" class="form-control" id="paid amount" aria-describedby="emailHelp" value="{{ stu_data.paid_amount }}">
+              </div>
+              <div class="form-group">
+                <label for="balance amount">Balance Amount</label>
+                <input type="number" name="balance_amount" class="form-control" id="balance amount" value="{{ stu_data.balance_amount }}">
+{#                  <input type="hidden" name="id" class="form-control" ="{{ stu_data.id }}">#}
+              </div>
+
+              <center>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-danger">Clear</button>
+              </center>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

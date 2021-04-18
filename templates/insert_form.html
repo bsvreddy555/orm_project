@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="offset-md-2 col-md-8">
+            <h1 class="text-center">Please Enter Your Data</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Your Name">
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for='age'>Age</label>
+                            <input type="number" name="age" class="form-control" id="age" placeholder="Enter Your Age">
+                          </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="qualification">Qualification</label>
+                            <input type="text" name="qualification" class="form-control" id="qualification" aria-describedby="emailHelp" placeholder="Enter Your Qualification">
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email id">Email Id</label>
+                            <input type="text" name="email_id" class="form-control" id="email id" placeholder="Enter Your Email Id">
+                          </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="duration">Duration</label>
+                            <input type="number" name="duration" class="form-control" id="duration" aria-describedby="emailHelp" placeholder="Enter Duration In days">
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Joining Date">Joining Date</label>
+                            <input type="date" name="joining_date" class="form-control" id="Joining Date" placeholder="Enter Joining Date">
+                          </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="paid amount">Paid Amount</label>
+                            <input type="number" name="paid_amount" class="form-control" id="paid amount" aria-describedby="emailHelp" placeholder="Paid Amount">
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="balance amount">Balance Amount</label>
+                            <input type="number" name="balance_amount" class="form-control" id="balance amount" placeholder="Balance Amount">
+                          </div>
+                    </div>
+                </div>
+              <center>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-danger">Clear</button>
+              </center>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

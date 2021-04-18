@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <form method="post">
+                {% csrf_token %}
+                <select  name="course"  class="form-control">
+{#                  <option value="default" >---select---</option>#}
+                   <option selected="selected" selected disabled hidden>Choose here</option>
+                      {% for i in courses %}
+                           <option value="{{ i.id }}" >{{ i.course }}</option>
+                       {% endfor %}
+                </select><br>
+               <center>
+                   <input type="submit" class="btn btn-success" value="SUBMIT">
+                   <input type="reset" class="btn btn-danger" value="CLEAR">
+               </center>
+            </form>
+        <br>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <table class="table ">
+              <thead>
+                <tr>
+                  <tr class="text-center">
+                  <th scope="col" >Name</th>
+                  <th scope="col">Aget</th>
+                  <th scope="col">Qualification</th>
+                  <th scope="col">Mail ID</th>
+                    <th scope="col">Duration</th>
+                  <th scope="col">Joining Date</th>
+                    <th scope="col">Paid Amount</th>
+                  <th scope="col">Balance Amount</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+              {% for i in student_list %}
+                  <tr>
+                  <th class="ro1">{{ i.name }}</th>
+                  <td>{{ i.age }}</td>
+                  <td>{{ i.qualification }}</td>
+                  <td>{{ i.mail_id }}</td>
+                  <td>{{ i.duration }}</td>
+                  <td>{{ i.joining_date }}</td>
+                  <td>{{ i.paid_amount }}</td>
+                  <td>{{ i.balance_amount }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+{% endblock %}

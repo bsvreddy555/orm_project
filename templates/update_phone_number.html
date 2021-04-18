@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="offset-md-1 col-md-10">
+        <form method="post" >
+                {% csrf_token %}
+              <div class="form-group">
+                <label for="mobile Number">Mobile Number</label>
+                <input type='number' name="ph_number" class="form-control" id="mobile Number" value="{{ mobile_number.ph_number }}" aria-describedby="emailHelp" placeholder="Enter Your Update Number">
+{#                   <input type='hidden' name="id" class="form-control" aria-describedby="emailHelp" value="{{ add_phone.id }}">#}
+              </div>
+                 <center>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-danger">Clear</button>
+              </center>
+        </form><br>
+    </div>
+</div>
+</div>
+{% endblock %}

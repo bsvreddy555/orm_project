@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'cdn_lines.html' %}
+    <style>
+        .m{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">B Sv Reddy</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="{% url 'home_view' %}">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="{% url 'insert_data' %}">Create Data</a>
+      <a class="nav-item nav-link" href="{% url 'add_course' %}">Add Course</a>
+      <a class="nav-item nav-link " href="{% url 'display_courses' %}" tabindex="-1" aria-disabled="true">Display Courses</a>
+    </div>
+  </div>
+</nav><br><br>
+<div class="m">
+    {% block content %}
+
+    {% endblock %}
+</div>
+</body>
+</html>

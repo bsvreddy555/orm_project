@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% block content %}
+{#    <style>#}
+{#    .ro1{#}
+{#        column-width: 500px;#}
+{#    }#}
+{#    </style>#}
+<div class="container-fluid">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <table class="table ">
+              <thead>
+                <tr>
+                  <tr class="text-center">
+                  <th scope="col" >Name</th>
+                  <th scope="col">Aget</th>
+                  <th scope="col">Qualification</th>
+                  <th scope="col">Mail ID</th>
+                    <th scope="col">Duration</th>
+                  <th scope="col">Joining Date</th>
+                    <th scope="col">Paid Amount</th>
+                  <th scope="col">Balance Amount</th>
+                    <th colspan = "4" scope="col">Operations</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+              {% for i in stu_data %}
+                  <tr>
+                  <th class="ro1">{{ i.name }}</th>
+                  <td>{{ i.age }}</td>
+                  <td>{{ i.qualification }}</td>
+                  <td>{{ i.mail_id }}</td>
+                  <td>{{ i.duration }}</td>
+                  <td>{{ i.joining_date }}</td>
+                  <td>{{ i.paid_amount }}</td>
+                  <td>{{ i.balance_amount }}</td>
+                      <td><a href="{% url 'delete' i.id %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                   <td> <a href="{% url 'update' i.id %}"><button type="button" class="btn btn-success">Update</button></a>
+                  </td>
+                  <td > <a href="{% url 'add_phone_view' i.id %}"><button style="width: 120px" type="button" class=" btn btn-success">Add Phone</button></a>
+                  </td>
+                  <td><a href="{% url 'user_course' i.id %}"><button style="width: 120px" type="button" class=" btn btn-success">Add Phone</button></a></td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
